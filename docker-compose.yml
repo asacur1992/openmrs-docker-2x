@@ -10,6 +10,7 @@ services:
              - network
          volumes:
              - datadb:/var/lib/mysql
+         restart: unless-stopped
 
      refapp-tomcat:
          build:
@@ -28,11 +29,8 @@ services:
            - type: bind
              source: ./data/OpenMRS
              target: /usr/local/tomcat/.OpenMRS
-         healthcheck:
-            test: "/usr/bin/mysql --user=root --password=root --execute \"SHOW DATABASES;\""
-            interval: 2s
-            timeout: 30s
-            retries: 15
+         restart: unless-stopped
+         
 networks:
   network:
     driver: bridge

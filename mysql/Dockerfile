@@ -8,7 +8,6 @@ ENV MYSQL_DATA_DIRECTORY=/var/lib/mysql
 
 ADD mysql.cnf /root/.my.cnf
 ADD localtime /etc/localtime
-ADD openmrs.sql /openmrs.sql
 
 COPY run.sh /run.sh
 
