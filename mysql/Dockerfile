@@ -9,8 +9,9 @@ ENV MYSQL_DATA_DIRECTORY=/var/lib/mysql
 ADD mysql.cnf /root/.my.cnf
 ADD localtime /etc/localtime
 
-COPY run.sh /run.sh
+RUN chmod 664 /root/.my.cnf
 
+COPY run.sh /run.sh
 
 EXPOSE 3306
 
