@@ -17,7 +17,7 @@ docker stop refapp-tomcat
 
 echo executing backup
 # Create backup
-docker exec -i refapp-db mysqldump -uroot --password=HIsf0rICAP openmrs > $path/$filename
+docker exec -i refapp-db mysqldump -uroot --password=senha openmrs > $path/$filename
 
 # ZIP backup
 cd $path
